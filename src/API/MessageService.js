@@ -9,7 +9,7 @@ export default class MessageService{
         return await axios.get('http://localhost:15000/message' + id)
     }
 
-    static async postMessage(data){
-        return await axios.post('http://localhost:15000/message', data)
+    static async postMessage(...data){
+        return await axios.post('http://localhost:15000/message', ...data)
     }
 }
