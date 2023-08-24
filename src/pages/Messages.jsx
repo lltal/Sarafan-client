@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react';
 import MessageService from "../API/MessageService";
 import useFetching from "../hooks/useFetching";
 import MessageList from '../components/MessageList';
+import CreationForm from '../components/UI/creationForm/CreationForm'
+import '../styles/App.css'
+
 
 const Messages = () => {
 
@@ -14,7 +17,6 @@ const Messages = () => {
     })
 
     const [postMessage] = useFetching(async (data) => {
-        console.log(data)
         const response = await MessageService.postMessage(data)
         setMessage([...response.data])
     })
@@ -23,25 +25,19 @@ const Messages = () => {
         fetchMessages()
     }, [])
 
-    const saveMessage = () => {
+    function saveMessage (e) {
+        e.preventDefault()
         postMessage({text: text})
     }
 
     return (
-        <div>
-            <input
-                type="text"
-                placeholder="Write something"
-                defaultValue={text}
-                onChange={(e) => setText(e.target.value)}
+        <div className="messages__page">
+            <CreationForm
+                text={text} 
+                setText={setText}
+                saveMessage={saveMessage}
             />
-            <button
-                onClick={() => saveMessage()}
-            >
-                Save
-            </button>
             <MessageList messages={messages}/>
-            
         </div>
     );
 };

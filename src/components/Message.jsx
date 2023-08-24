@@ -2,9 +2,10 @@
 import '../styles/App.css'
 
 const Message = ({message, index}) => {
+
     return (
         <div className="message">
-            <span>{index}. {message.text}</span>
+            <div>{index}. {message.text}</div>
         </div>)
 }
 
