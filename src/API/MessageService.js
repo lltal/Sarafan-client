@@ -6,10 +6,18 @@ export default class MessageService{
     }
 
     static async getById(id){
-        return await axios.get('http://localhost:15000/message' + id)
+        return await axios.get('http://localhost:15000/message/' + id)
     }
 
-    static async postMessage(...data){
-        return await axios.post('http://localhost:15000/message', ...data)
+    static async postMessage({inputMessage}){
+        return await axios.post('http://localhost:15000/message', inputMessage)
+    }
+
+    static async putMessage({inputMessage}){
+        return await axios.put('http://localhost:15000/message/' + inputMessage.id, inputMessage)
+    }
+
+    static async deleteById(id){
+        return await axios.delete('http://localhost:15000/message/' + id)
     }
 }

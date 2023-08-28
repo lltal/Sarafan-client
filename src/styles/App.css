@@ -32,6 +32,7 @@
     border: 2px solid teal;
     border-radius: 16px;
     margin-top: 15px;
+    position: relative;
     justify-content: space-between;
     align-items: center;
 }
