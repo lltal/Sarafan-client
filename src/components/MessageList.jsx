@@ -1,4 +1,4 @@
-import Message from './Message'
+import MessageItem from './MessageItem'
 import '../styles/App.css'
 import useFetching from "../hooks/useFetching";
 import MessageService from "../API/MessageService";
@@ -22,7 +22,7 @@ const MessageList = ({inputMessage, setInputMessage, messages, setMessages, getI
     return (
         <div className="messages">
             {messages.map((message, index) =>
-                <Message 
+                <MessageItem
                     key={message.id} 
                     message={message}
                     index={index}

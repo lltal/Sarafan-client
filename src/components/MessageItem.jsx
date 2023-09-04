@@ -1,6 +1,6 @@
 import '../styles/App.css'
 
-const Message = ({message, index, removeMessage, updateMessage}) => {
+const MessageItem = ({message, index, removeMessage, updateMessage}) => {
 
     return (
         <div className="message">
@@ -18,4 +18,4 @@ const Message = ({message, index, removeMessage, updateMessage}) => {
         </div>)
 }
 
-export default Message
+export default MessageItem

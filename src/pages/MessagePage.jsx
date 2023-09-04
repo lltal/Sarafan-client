@@ -4,9 +4,12 @@ import useFetching from "../hooks/useFetching";
 import MessageList from '../components/MessageList';
 import MessageForm from '../components/UI/creationForm/MessageForm'
 import '../styles/App.css'
+import {useDispatch, useSelector} from "react-redux";
 
 
 const MessagePage = () => {
+
+    const isAuth = useSelector(state => state.isAuth)
 
     const [messages, setMessages] = useState([])
     const [inputMessage, setInputMessage] = useState({id: "", text: ""})
@@ -17,7 +20,9 @@ const MessagePage = () => {
     })
 
     useEffect(() => {
-        fetchMessages()
+        if(isAuth){
+            fetchMessages()
+        }
     }, [])
 
     function getIndex(message){
@@ -31,22 +36,31 @@ const MessagePage = () => {
     }
 
     return (
-        <div className="messages__page">
-            <MessageForm
-                inputMessage={inputMessage}
-                setInputMessage={setInputMessage}
-                messages={messages}
-                setMessages={setMessages}
-                getIndex={getIndex}
-            />
-            <MessageList
-                inputMessage={inputMessage}
-                setInputMessage={setInputMessage}
-                messages={messages}
-                setMessages={setMessages}
-                getIndex={getIndex}
-            />
+        <div>
+            {isAuth
+                ?
+                <div className="messages__page">
+                    <MessageForm
+                        inputMessage={inputMessage}
+                        setInputMessage={setInputMessage}
+                        messages={messages}
+                        setMessages={setMessages}
+                        getIndex={getIndex}
+                    />
+                    <MessageList
+                        inputMessage={inputMessage}
+                        setInputMessage={setInputMessage}
+                        messages={messages}
+                        setMessages={setMessages}
+                        getIndex={getIndex}
+                    />
+                </div>
+                :
+                <div>is Loading...</div>
+            }
         </div>
+
+
     );
 };
 
