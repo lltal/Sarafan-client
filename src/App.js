@@ -1,15 +1,17 @@
-import MessagePage from "./pages/MessagePage";
 import './styles/App.css'
-import AppHeader from "./components/AppHeader";
-import {BrowserRouter} from "react-router-dom";
+import AppRouter from "./components/AppRouter";
+import AppHeader from './components/AppHeader';
+import { Provider } from 'react-redux/es';
+import { store } from './store';
 
 function App() {
   return (
     <div className="App">
-        <BrowserRouter/>
-            <AppHeader/>
-            <MessagePage/>
-        <BrowserRouter/>
+      <Provider store={store}>
+          <AppHeader/>
+          <AppRouter/>
+      </Provider>
+        
     </div>
   );
 }

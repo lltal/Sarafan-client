@@ -5,6 +5,7 @@ import MessageList from '../components/MessageList';
 import MessageForm from '../components/UI/creationForm/MessageForm'
 import '../styles/App.css'
 import {useDispatch, useSelector} from "react-redux";
+import AppHeader from '../components/AppHeader';
 
 
 const MessagePage = () => {

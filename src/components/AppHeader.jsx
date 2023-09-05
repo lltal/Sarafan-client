@@ -1,7 +1,6 @@
 import React from 'react';
-import {Link, NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {login} from "../store/authReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, NavLink } from 'react-router-dom';
 
 const AppHeader = () => {
 
@@ -23,7 +22,7 @@ const AppHeader = () => {
                                     {/*<NavLink to="/profile">Profile</NavLink>*/}
                                 </li>
                                 <li>
-                                    <a onClick={() => dispatch(login({auth: false}))}>Logout</a>
+                                    {/* <a onClick={() => dispatch(login({auth: false}))}>Logout</a> */}
                                 </li>
                             </ul>)
                             :
@@ -32,7 +31,7 @@ const AppHeader = () => {
                                     {/*<NavLink to="/login">Login</NavLink>*/}
                                 </li>
                                 <li>
-                                    {/*<NavLink to="/signup">Signup</NavLink>*/}
+                                    <NavLink to="/signup">Signup</NavLink>
                                 </li>
                             </ul>
                         )}

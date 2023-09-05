@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import {Navigate, Route, Routes} from "react-router-dom";
-import {privateRoutes} from "../router/route";
+import {Route, Routes} from "react-router-dom";
+import {privateRoutes, publicRoutes} from "../router/route";
 
 const AppRouter = () => {
 
@@ -21,7 +21,7 @@ const AppRouter = () => {
             </Routes>
             :
             <Routes>
-                {privateRoutes.map(route =>
+                {publicRoutes.map(route =>
                     <Route
                         path={route.path}
                         element={route.element}
