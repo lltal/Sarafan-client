@@ -8,10 +8,13 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
-          <AppHeader/>
-          <AppRouter/>
+          <div className="app-top">
+            <AppHeader/>
+          </div>
+          <div className="app-body">
+            <AppRouter/>
+          </div>
       </Provider>
-        
     </div>
   );
 }
