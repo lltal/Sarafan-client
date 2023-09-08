@@ -25,7 +25,7 @@ const SignupPage = () => {
                     </div>
                     {/* <SignupForm {...this.props} /> */}
                     <span className="login-link">
-                        Already have an account?
+                        Already have an account?&nbsp;
                         <Link to="/login">
                             Login!
                         </Link>

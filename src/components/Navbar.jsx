@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from 'react-router-dom';
+import '../styles/Navbar.css'
 
 const AppHeader = () => {
 
@@ -11,7 +12,7 @@ const AppHeader = () => {
         <header className="app-header">
             <div className="container">
                 <div className="app-branding">
-                    {/*<Link to="/" className="app-title">Spring Social</Link>*/}
+                    <Link to="/" className="app-title">Sarafan</Link>
                 </div>
                 <div className="app-options">
                     <nav className="app-nav">
