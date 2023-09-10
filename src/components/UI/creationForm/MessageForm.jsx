@@ -1,6 +1,6 @@
 import './MessageForm.css'
 import useFetching from "../../../hooks/useFetching";
-import MessageService from "../../../API/MessageService";
+import MessageService from "../../../services/MessageService";
 
 const MessageForm = ({inputMessage, setInputMessage, messages, setMessages, getIndex}) => {
 

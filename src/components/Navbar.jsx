@@ -9,7 +9,7 @@ const AppHeader = () => {
     const dispatch = useDispatch()
 
     return (
-        <header className="app-header">
+        <header className="navbar">
             <div className="container">
                 <div className="app-branding">
                     <Link to="/" className="app-title">Sarafan</Link>

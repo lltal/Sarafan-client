@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import MessageService from "../API/MessageService";
+import MessageService from "../services/MessageService";
 import useFetching from "../hooks/useFetching";
 import MessageList from '../components/MessageList';
 import MessageForm from '../components/UI/creationForm/MessageForm'

@@ -1,7 +1,8 @@
-.app-header {
+.navbar {
     height: 60px;
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: center;
     z-index: 10;
     padding: 0 5px 0 15px;
 }
@@ -26,7 +27,7 @@
 }
 
 .app-nav ul {
-    list-style-position: none;
+    list-style-position: unset;
     margin: 0;
     padding: 0;
 }

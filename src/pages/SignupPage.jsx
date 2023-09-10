@@ -12,7 +12,7 @@ const SignupPage = () => {
         <div>
             {isAuth
             ?
-            <Navigate to="messages" replace/>
+            <Navigate to="messages" replace={true}/>
             :
             <div className="signup-container">
                 <div className="signup-content">

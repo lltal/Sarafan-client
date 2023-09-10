@@ -1,7 +1,7 @@
 import MessageItem from './MessageItem'
 import '../styles/App.css'
 import useFetching from "../hooks/useFetching";
-import MessageService from "../API/MessageService";
+import MessageService from "../services/MessageService";
 
 const MessageList = ({inputMessage, setInputMessage, messages, setMessages, getIndex}) => {
 
