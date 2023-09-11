@@ -20,7 +20,7 @@ const AppHeader = () => {
                             ?
                             (<ul>
                                 <li>
-                                    {/*<NavLink to="/profile">Profile</NavLink>*/}
+                                    <NavLink to="/profile">Profile</NavLink>
                                 </li>
                                 <li>
                                     {/* <a onClick={() => dispatch(login({auth: false}))}>Logout</a> */}
