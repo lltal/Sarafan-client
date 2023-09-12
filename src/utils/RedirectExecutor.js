@@ -1,4 +1,4 @@
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {login} from "../store/authReducer";
 import {Navigate} from "react-router-dom";
 import {useEffect} from "react";

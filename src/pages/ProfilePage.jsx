@@ -4,8 +4,10 @@ import '../styles/ProfilePage.css'
 
 const ProfilePage = () => {
     return (
-        <div className="profile__body">
-            <NavLink to="/messages">Сообщения</NavLink>
+        <div className="profile__page">
+            <div className="profile__navigation">
+                <NavLink className="messages__link" to="/messages">Сообщения</NavLink>
+            </div>
         </div>
     );
 };

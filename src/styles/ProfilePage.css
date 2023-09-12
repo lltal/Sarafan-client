@@ -1,5 +1,17 @@
-.profile__body {
-    max-width: 1000px;
+.profile__page {
+    width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.profile__navigation {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    min-width: 800px;
+}
+
+.messages__link {
+    float: left;
+    color: rgba(0, 0, 0, 0.65);
 }
