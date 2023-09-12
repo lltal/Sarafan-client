@@ -6,7 +6,6 @@ import '../styles/Navbar.css'
 const AppHeader = () => {
 
     const isAuth = useSelector(state => state.auth.isAuth)
-    const dispatch = useDispatch()
 
     return (
         <header className="navbar">

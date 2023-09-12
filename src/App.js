@@ -5,7 +5,7 @@ import { Provider } from 'react-redux/es';
 import { store } from './store';
 
 function App() {
-  return (
+    return (
     <div className="App">
       <Provider store={store}>
           <div className="app-body">
@@ -16,7 +16,7 @@ function App() {
           </div>
       </Provider>
     </div>
-  );
+    );
 }
 
 export default App;

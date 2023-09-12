@@ -8,9 +8,9 @@ const LOGOUT = "LOGOUT"
 const authReducer = (state = defaultState, action) => {
     switch (action.type){
         case LOGIN:
-            return {...state, isAuth: action.auth}
+            return {...state, isAuth: action.payload.auth}
         case LOGOUT:
-            return {...state, isAuth: action.auth}
+            return {...state, isAuth: action.payload.auth}
         default:
             return state
     }

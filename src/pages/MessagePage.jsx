@@ -10,7 +10,7 @@ import AppHeader from '../components/Navbar';
 
 const MessagePage = () => {
 
-    const isAuth = useSelector(state => state.isAuth)
+    const isAuth = useSelector(state => state.auth.isAuth)
 
     const [messages, setMessages] = useState([])
     const [inputMessage, setInputMessage] = useState({id: "", text: ""})

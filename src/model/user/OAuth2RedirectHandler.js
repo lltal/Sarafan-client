@@ -1,7 +1,5 @@
 import {Navigate, useSearchParams} from "react-router-dom";
-import {ACCESS_TOKEN} from "../../constants";
-import {useDispatch} from "react-redux";
-import {login} from "../../store/authReducer";
+import RedirectExecutor from "../../utils/RedirectExecutor";
 
 
 const OAuth2RedirectHandler = () => {
@@ -10,8 +8,7 @@ const OAuth2RedirectHandler = () => {
     const token = searchParams.get("token")
 
     if (token){
-        localStorage.setItem(ACCESS_TOKEN, token)
-        return <Navigate to="/profile" replace={true}/>
+        return <RedirectExecutor token={token}/>
     } else {
         return <Navigate to="/error"/>
     }
