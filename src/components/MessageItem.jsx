@@ -1,4 +1,4 @@
-import '../styles/App.css'
+import '../styles/MessagePage.css'
 
 const MessageItem = ({message, index, removeMessage, updateMessage}) => {
 

@@ -3,7 +3,7 @@ import MessageService from "../services/MessageService";
 import useFetching from "../hooks/useFetching";
 import MessageList from '../components/MessageList';
 import MessageForm from '../components/UI/creationForm/MessageForm'
-import '../styles/App.css'
+import '../styles/MessagePage.css'
 import {useSelector} from "react-redux";
 
 const MessagePage = () => {
@@ -58,8 +58,6 @@ const MessagePage = () => {
                 <div>is Loading...</div>
             }
         </div>
-
-
     );
 };
 

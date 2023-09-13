@@ -49,3 +49,15 @@
     padding: 10px;
     color: rgba(0,0,0,.45);
   }
+
+a {
+    color: #2098f3;
+    text-decoration: none;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #40a9ff;
+    text-decoration: none;
+}

@@ -1,5 +1,5 @@
 import MessageItem from './MessageItem'
-import '../styles/App.css'
+import '../styles/MessagePage.css'
 import useFetching from "../hooks/useFetching";
 import MessageService from "../services/MessageService";
 

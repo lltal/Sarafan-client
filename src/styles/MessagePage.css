@@ -1,0 +1,25 @@
+.messages__page {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    max-width: 1300px;
+    min-width: 800px;
+}
+
+.message {
+    display: flex;
+    padding: 15px;
+    border: 2px solid #40a9ff;
+    border-radius: 16px;
+    margin-top: 15px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
