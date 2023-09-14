@@ -10,8 +10,8 @@ const RedirectExecutor = ({token}) => {
 
     useEffect(() => {
         localStorage.setItem(ACCESS_TOKEN, token)
-        dispatch(login({auth: true}))
-    }, []);
+        dispatch(login())
+    });
 
     return <Navigate to="/profile" replace={true}/>
 }

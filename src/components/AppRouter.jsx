@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {privateRoutes, publicRoutes} from "../router/route";
 import {ACCESS_TOKEN} from "../constants";
 import {login} from "../store/authReducer";
@@ -27,6 +27,10 @@ const AppRouter = () => {
                         key={route.path}
                     />
                 )}
+                <Route
+                    path="*"
+                    element={<Navigate to="/profile" replace={true}/>}
+                />
             </Routes>
             :
             <Routes>
@@ -37,6 +41,10 @@ const AppRouter = () => {
                         key={route.path}
                     />
                 )}
+                <Route
+                    path="*"
+                    element={<Navigate to="/" replace={true}/>}
+                />
             </Routes>
     );
 };

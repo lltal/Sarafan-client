@@ -8,15 +8,16 @@ const LOGOUT = "LOGOUT"
 const authReducer = (state = defaultState, action) => {
     switch (action.type){
         case LOGIN:
-            return {...state, isAuth: action.payload.auth}
+            return {...state, isAuth: true}
         case LOGOUT:
-            return {...state, isAuth: action.payload.auth}
+            return {...state, isAuth: false}
         default:
             return state
     }
 }
 
+export const login = (payload) => ({type: LOGIN})
+export const logout = (payload) => ({type: LOGOUT})
+
 export default authReducer
 
-export const login = (payload) => ({type: LOGIN, payload})
-export const logout = (payload) => ({type: LOGOUT, payload})

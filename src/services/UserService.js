@@ -1,7 +1,12 @@
+import { ACCESS_TOKEN, API_BASE_URL } from "../constants";
 import $api from "../http";
 
 export default class UserService{
-    static async getUserFromToken(){
-        return await $api.get('http://localhost:15000/user/me')
+    static getCurrentUser(){
+        if (!localStorage.getItem(ACCESS_TOKEN)){
+            return Promise.reject("No access token set.");
+        }
+
+        return $api.get(API_BASE_URL + '/user/me')
     }
 }

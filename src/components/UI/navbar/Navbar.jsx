@@ -1,13 +1,11 @@
 import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, NavLink } from 'react-router-dom';
-import '../styles/Navbar.css'
-import {login} from "../store/authReducer";
+import './Navbar.css'
 
-const AppHeader = () => {
+const AppHeader = ({logout}) => {
 
     const isAuth = useSelector(state => state.auth.isAuth)
-    const dispatch = useDispatch()
 
     return (
         <header className="navbar">
@@ -24,7 +22,7 @@ const AppHeader = () => {
                                     <NavLink to="/profile">Profile</NavLink>
                                 </li>
                                 <li>
-                                    <a onClick={() => dispatch(login({auth: false}))}>Logout</a>
+                                    <a onClick={() => {logout()}}>Logout</a>
                                 </li>
                             </ul>)
                             :
