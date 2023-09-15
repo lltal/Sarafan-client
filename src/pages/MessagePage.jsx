@@ -5,6 +5,7 @@ import MessageList from '../components/MessageList';
 import MessageForm from '../components/UI/creationForm/MessageForm'
 import '../styles/MessagePage.css'
 import {useSelector} from "react-redux";
+import BasePage from './BasePage';
 
 const MessagePage = () => {
 
@@ -33,32 +34,32 @@ const MessagePage = () => {
 
         return -1
     }
-
-    return (
-        <div>
-            {isAuth
-                ?
-                <div className="messages__page">
-                    <MessageForm
-                        inputMessage={inputMessage}
-                        setInputMessage={setInputMessage}
-                        messages={messages}
-                        setMessages={setMessages}
-                        getIndex={getIndex}
-                    />
-                    <MessageList
-                        inputMessage={inputMessage}
-                        setInputMessage={setInputMessage}
-                        messages={messages}
-                        setMessages={setMessages}
-                        getIndex={getIndex}
-                    />
-                </div>
-                :
-                <div>is Loading...</div>
-            }
-        </div>
-    );
+    
+    return (<BasePage>
+            <div>
+                {isAuth
+                    ?
+                    <div className="messages__page">
+                        <MessageForm
+                            inputMessage={inputMessage}
+                            setInputMessage={setInputMessage}
+                            messages={messages}
+                            setMessages={setMessages}
+                            getIndex={getIndex}
+                        />
+                        <MessageList
+                            inputMessage={inputMessage}
+                            setInputMessage={setInputMessage}
+                            messages={messages}
+                            setMessages={setMessages}
+                            getIndex={getIndex}
+                        />
+                    </div>
+                    :
+                    <div>is Loading...</div>
+                }
+            </div>
+        </BasePage>)
 };
 
 export default MessagePage;

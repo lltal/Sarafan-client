@@ -1,13 +1,14 @@
 import './styles/App.css'
 import AppRouter from "./components/AppRouter";
-import AppHeader from './components/UI/navbar/Navbar';
-import { Provider, useDispatch } from 'react-redux/es';
+import { Provider } from 'react-redux/es';
 import { store } from './store';
 import UserService from './services/UserService';
 import { loginUser, logoutUser } from './store/userReducer';
 import { login, logout } from './store/authReducer';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux/es';
 import { ACCESS_TOKEN } from './constants';
+import Navbar from './components/UI/navbar/Navbar'
 
 function App() {
 
@@ -16,6 +17,12 @@ function App() {
   useEffect(() => {
     loadCurrentlyLoggedUser()
   })
+
+  function handleLogout() {
+    localStorage.removeItem(ACCESS_TOKEN)
+    dispatch(logout())
+    dispatch(logoutUser())
+}
 
   function loadCurrentlyLoggedUser () {
     UserService.getCurrentUser()
@@ -31,24 +38,12 @@ function App() {
     })
   }
 
-  function handleLogout() {
-    localStorage.removeItem(ACCESS_TOKEN)
-    dispatch(logout())
-    dispatch(logoutUser())
-  }
-
-
   return (
-  <div className="App">
+  <div className="app">
     <Provider store={store}>
-      <div className="app-body">
-        <div className="app-top">
-          <AppHeader logout={handleLogout}/>
-        </div>
-        <AppRouter/>
-      </div>
+      <Navbar logout={handleLogout}/>
+      <AppRouter/>
     </Provider>
-      
   </div>
   );
 }

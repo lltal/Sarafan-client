@@ -1,22 +1,22 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
 import '../styles/ProfilePage.css'
 import { useSelector } from 'react-redux';
+import BasePage from './BasePage';
+import googleLogo from "../img/google-logo.png"
 
 const ProfilePage = () => {
 
     const user = useSelector(select => select.user)
-    console.log(user.imageUrl)
-    return (
+
+    return (<BasePage>
         <div className="profile__page">
             <div className="profile__content">
-                <div className="profile__navigation">
-                    <NavLink className="messages__link" to="/messages">Messages</NavLink>
-                </div>
+                
                 <div className="profile__info">
                     <div className="profile__avatar">
                         <img 
                             src={user.imageUrl} 
+                            alt={googleLogo}
                         />
                     </div>
                     <div className="progile__name">
@@ -25,8 +25,7 @@ const ProfilePage = () => {
                 </div>
             </div>
         </div>
-    
-    );
+    </BasePage>)
 };
 
 export default ProfilePage;

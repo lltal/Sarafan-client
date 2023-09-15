@@ -1,25 +1,25 @@
-.messages__page {
-    margin-top: 15px;
+.users__page {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
-.messages {
+.users {
     display: flex;
     flex-direction: column;
     max-width: 1100px;
     min-width: 800px;
 }
 
-.message {
+.user {
     display: flex;
     padding: 15px;
     border: 2px solid #40a9ff;
     border-radius: 16px;
     margin-top: 15px;
-    position: relative;
-    justify-content: space-between;
     align-items: center;
+}
+
+.user img {
+    border-radius: 50%;
+    max-width: 32px;
 }

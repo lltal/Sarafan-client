@@ -3,43 +3,43 @@ import { useSelector } from "react-redux";
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css'
 
-const AppHeader = ({logout}) => {
+
+const Navbar = ({logout}) => {
 
     const isAuth = useSelector(state => state.auth.isAuth)
 
     return (
-        <header className="navbar">
-            <div className="container">
-                <div className="app-branding">
-                    <Link to="/" className="app-title">Sarafan</Link>
-                </div>
-                <div className="app-options">
-                    <nav className="app-nav">
-                        {isAuth
-                            ?
-                            (<ul>
-                                <li>
-                                    <NavLink to="/profile">Profile</NavLink>
-                                </li>
-                                <li>
-                                    <a onClick={() => {logout()}}>Logout</a>
-                                </li>
-                            </ul>)
-                            :
-                            (<ul>
-                                <li>
-                                    <NavLink to="/login">Login</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/signup">Signup</NavLink>
-                                </li>
-                            </ul>
-                        )}
-                    </nav>
-                </div>
+        <div className="navbar__body">
+            <div className="navbar__left__column">
+                <Link to="/" className="app__title">Sarafan</Link>
             </div>
-        </header>
+            <div className="navbar__center__column"></div>
+            <div className="navbar__right__column">
+                <nav className="app__nav">
+                    {isAuth
+                        ?
+                        (<ul>
+                            <li>
+                                <NavLink to="/profile">Profile</NavLink>
+                            </li>
+                            <li>
+                                <a onClick={() => {logout()}}>Logout</a>
+                            </li>
+                        </ul>)
+                        :
+                        (<ul>
+                            <li>
+                                <NavLink to="/login">Login</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/signup">Signup</NavLink>
+                            </li>
+                        </ul>
+                    )}
+                </nav>
+            </div>
+        </div>
     );
 };
 
-export default AppHeader;
+export default Navbar;

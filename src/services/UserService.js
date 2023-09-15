@@ -9,4 +9,9 @@ export default class UserService{
 
         return $api.get(API_BASE_URL + '/user/me')
     }
+
+    static async getAll(){
+        const response = await $api.get(API_BASE_URL + '/users')
+        return response
+    }
 }

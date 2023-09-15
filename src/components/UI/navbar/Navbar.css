@@ -7,37 +7,53 @@
     padding: 0 5px 0 15px;
 }
 
-.app-title {
+.navbar__body {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgba(0,0,0,.80);
+    width: 1300px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar__left__column {
+    width: 250px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar__center__column {
+    width: 800px;
+}
+
+.navbar__right__column {
+    width: 250px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.app__title {
+    padding: 10px;
     line-height: 60px;
     vertical-align: middle;
     font-size: 1.35em;
 }
 
-.container {
-    width: 100%;
-    max-width: 1300px;
-}
-
-.app-branding {
-    float: left;
-}
-
-.app-options {
-    float: right;
-}
-
-.app-nav ul {
+.app__nav ul {
     list-style-position: unset;
     margin: 0;
     padding: 0;
 }
 
-.app-nav ul li {
+.app__nav ul li {
     list-style-type: none;
     display: inline-block;
 }
 
-.app-nav ul li a {
+.app__nav ul li a {
     display: inline-block;
     line-height: 60px;
     vertical-align: middle;
@@ -46,10 +62,10 @@
     color: rgba(0,0,0,0.65);
 }
 
-.app-nav ul li a:hover {
+.app__nav ul li a:hover {
     color: #0f96f6;
 }
 
-.app-nav ul li a.active {
+.app__nav ul li a.active {
     color: #0f96f6;
 }
