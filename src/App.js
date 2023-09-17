@@ -9,6 +9,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux/es';
 import { ACCESS_TOKEN } from './constants';
 import Navbar from './components/UI/navbar/Navbar'
+import LeftColumn from "./components/UI/leftColumn/LeftColumn";
+import RightColumn from "./components/UI/rightColumn/RightColumn";
 
 function App() {
 
@@ -29,6 +31,7 @@ function App() {
     .then(response => {
       const user = {...response.data}
       dispatch(loginUser({
+        id: user.id,
         name: user.name,
         email: user.email,
         imageUrl: user.imageUrl }))
@@ -42,10 +45,15 @@ function App() {
   <div className="app">
     <Provider store={store}>
       <Navbar logout={handleLogout}/>
-      <AppRouter/>
+      <div className="app__body">
+        <LeftColumn/>
+        <div className="app__center__column">
+          <AppRouter/>
+        </div>
+        <RightColumn/>
+      </div>
     </Provider>
-  </div>
-  );
+  </div>);
 }
 
 export default App;

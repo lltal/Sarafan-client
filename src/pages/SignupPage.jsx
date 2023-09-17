@@ -3,15 +3,12 @@ import {useSelector} from "react-redux";
 import {Link, Navigate} from "react-router-dom";
 import SocialSignupForm from '../components/UI/socialSignupForm/SocialSignupForm';
 import '../styles/SignupPage.css'
-import BasePage from './BasePage';
 
 const SignupPage = () => {
 
     const isAuth = useSelector(state => state.auth.isAuth)
 
-    return (
-        <BasePage>
-            <div>
+    return (<div>
                 {isAuth
                 ?
                 <Navigate to="messages" replace={true}/>
@@ -35,9 +32,7 @@ const SignupPage = () => {
                     </div>
                 </div>
                 }
-            </div>
-        </BasePage>
-    )
+            </div>)
 }
 
 export default SignupPage

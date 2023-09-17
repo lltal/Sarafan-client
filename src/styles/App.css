@@ -21,35 +21,6 @@
     justify-content: center;
 }
 
-.app__left__column {
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
-
 .app__center__column {
     width: 800px;
-}
-
-.app__right__column {
-    width: 250px;
-    float: left;
-    display: flex;
-    flex-direction: column;
-}
-
-.app__left__column a {
-    display: inline-block;
-    line-height: 40px;
-    vertical-align: middle;
-    color: rgba(0,0,0,0.65);
-}
-
-.app__left__column a:hover {
-    color: #0f96f6;
-}
-
-.app__left__column a.active {
-    color: #0f96f6;
 }

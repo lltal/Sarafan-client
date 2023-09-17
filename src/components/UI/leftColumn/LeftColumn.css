@@ -1,0 +1,21 @@
+.left__column {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.left__column a {
+    display: inline-block;
+    line-height: 40px;
+    vertical-align: middle;
+    color: rgba(0,0,0,0.65);
+}
+
+.left__column a:hover {
+    color: #0f96f6;
+}
+
+.left__column a.active {
+    color: #0f96f6;
+}

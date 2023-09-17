@@ -1,17 +1,14 @@
 import React from 'react';
 import '../styles/ProfilePage.css'
 import { useSelector } from 'react-redux';
-import BasePage from './BasePage';
 import googleLogo from "../img/google-logo.png"
 
 const ProfilePage = () => {
 
     const user = useSelector(select => select.user)
 
-    return (<BasePage>
-        <div className="profile__page">
+    return (<div className="profile__page">
             <div className="profile__content">
-                
                 <div className="profile__info">
                     <div className="profile__avatar">
                         <img 
@@ -24,8 +21,7 @@ const ProfilePage = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    </BasePage>)
+        </div>)
 };
 
 export default ProfilePage;

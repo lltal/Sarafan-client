@@ -1,0 +1,6 @@
+.right__column {
+    width: 250px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}

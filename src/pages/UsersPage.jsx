@@ -3,10 +3,9 @@ import useFetching from "../hooks/useFetching"
 import UserService from "../services/UserService"
 import { useSelector } from "react-redux"
 import UserList from "../components/UserList"
-import BasePage from "./BasePage"
 import '../styles/UserPage.css'
 
-const UserPage = () => {
+const UsersPage = () => {
 
     const [users, setUsers] = useState([])
     const isAuth = useSelector(select => select.auth.isAuth)
@@ -22,9 +21,7 @@ const UserPage = () => {
         }
     }, [])
 
-    return (
-        <BasePage>
-            <div>
+    return (<div>
                 {isAuth
                     ?
                     <div className="users__page">
@@ -33,9 +30,7 @@ const UserPage = () => {
                     :
                     <div>isLoading...</div>
                 } 
-            </div>
-        </BasePage>
-    )
+            </div>)
 }
 
-export default UserPage
+export default UsersPage

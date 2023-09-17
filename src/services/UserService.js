@@ -7,11 +7,17 @@ export default class UserService{
             return Promise.reject("No access token set.");
         }
 
-        return $api.get(API_BASE_URL + '/user/me')
+        return $api.get(API_BASE_URL + '/users/me')
     }
 
     static async getAll(){
         const response = await $api.get(API_BASE_URL + '/users')
         return response
     }
+
+    static async getById(id){
+        const response = await $api.get(API_BASE_URL + '/users/' + id)
+        return response
+    }
+
 }

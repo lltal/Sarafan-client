@@ -3,7 +3,8 @@ import SignupPage from "../pages/SignupPage";
 import OAuth2RedirectHandler from "../model/user/OAuth2RedirectHandler";
 import ProfilePage from "../pages/ProfilePage";
 import LoginPage from "../pages/LoginPage";
-import UserPage from "../pages/UserPage";
+import UsersPage from "../pages/UsersPage";
+import UserIdPage from "../pages/UserIdPage";
 
 export const publicRoutes = [
     {path: '/signup', element: <SignupPage/>},
@@ -15,5 +16,6 @@ export const privateRoutes = [
     ...publicRoutes,
     {path: '/profile', element: <ProfilePage/>},
     {path: '/messages', element: <MessagePage/>},
-    {path: '/users', element: <UserPage/>}
+    {path: '/users', element: <UsersPage/>},
+    {path: '/users/:id', element: <UserIdPage/>}
 ]

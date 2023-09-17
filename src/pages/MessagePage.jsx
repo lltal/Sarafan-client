@@ -5,7 +5,6 @@ import MessageList from '../components/MessageList';
 import MessageForm from '../components/UI/creationForm/MessageForm'
 import '../styles/MessagePage.css'
 import {useSelector} from "react-redux";
-import BasePage from './BasePage';
 
 const MessagePage = () => {
 
@@ -35,8 +34,7 @@ const MessagePage = () => {
         return -1
     }
     
-    return (<BasePage>
-            <div>
+    return (<div>
                 {isAuth
                     ?
                     <div className="messages__page">
@@ -58,8 +56,7 @@ const MessagePage = () => {
                     :
                     <div>is Loading...</div>
                 }
-            </div>
-        </BasePage>)
+            </div>)
 };
 
 export default MessagePage;

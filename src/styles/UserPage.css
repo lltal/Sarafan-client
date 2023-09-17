@@ -10,16 +10,17 @@
     min-width: 800px;
 }
 
-.user {
+.user__item {
     display: flex;
     padding: 15px;
     border: 2px solid #40a9ff;
     border-radius: 16px;
     margin-top: 15px;
     align-items: center;
+    position: relative;
 }
 
-.user img {
+.user__item img {
     border-radius: 50%;
     max-width: 32px;
 }
