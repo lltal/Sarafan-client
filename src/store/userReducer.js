@@ -1,4 +1,5 @@
 const defaultState = {
+    id: -1,
     name: "",
     email: "",
     imageUrl: ""
@@ -11,7 +12,8 @@ const userReducer = (state = defaultState, action) => {
     switch (action.type) {
         case LOGIN_USER: {
             return {
-                ...state, 
+                ...state,
+                id: action.payload.id,
                 name: action.payload.name,
                 email: action.payload.email,
                 imageUrl: action.payload.imageUrl,
@@ -19,7 +21,8 @@ const userReducer = (state = defaultState, action) => {
         }
         case LOGOUT_USER: {
             return {
-                ...state, 
+                ...state,
+                id: -1,
                 name: "",
                 email: "",
                 imageUrl: ""

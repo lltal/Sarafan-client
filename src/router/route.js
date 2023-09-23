@@ -15,7 +15,7 @@ export const publicRoutes = [
 export const privateRoutes = [
     ...publicRoutes,
     {path: '/profile', element: <ProfilePage/>},
-    {path: '/messages', element: <MessagePage/>},
+    {path: '/messages/:id', element: <MessagePage/>},
     {path: '/users', element: <UsersPage/>},
     {path: '/users/:id', element: <UserIdPage/>}
 ]

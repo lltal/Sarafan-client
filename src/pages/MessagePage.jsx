@@ -5,10 +5,14 @@ import MessageList from '../components/MessageList';
 import MessageForm from '../components/UI/creationForm/MessageForm'
 import '../styles/MessagePage.css'
 import {useSelector} from "react-redux";
+import {useParams} from "react-router-dom";
 
 const MessagePage = () => {
 
     const isAuth = useSelector(state => state.auth.isAuth)
+
+    const params = useParams()
+    const socket = new WebSocket(`ws://localhost:15000/messages/${params.id}`)
 
     const [messages, setMessages] = useState([])
     const [inputMessage, setInputMessage] = useState({id: "", text: ""})
