@@ -1,29 +1,27 @@
 import React, {useEffect, useState} from 'react';
-import MessageService from "../services/MessageService";
-import useFetching from "../hooks/useFetching";
-import MessageList from '../components/MessageList';
-import MessageForm from '../components/UI/creationForm/MessageForm'
-import '../styles/MessagePage.css'
+import MessageService from "../../../services/MessageService";
+import useFetching from "../../../hooks/useFetching";
+import MessageList from './MessageList';
+import MessageForm from '../creationForm/MessageForm'
+import './MessageBlock.css'
 import {useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 
-const MessagePage = () => {
+const MessageBlock = ({chatId, propsMessages, socket}) => {
 
     const isAuth = useSelector(state => state.auth.isAuth)
-
-    const params = useParams()
-    const socket = new WebSocket(`ws://localhost:15000/messages/${params.id}`)
 
     const [messages, setMessages] = useState([])
     const [inputMessage, setInputMessage] = useState({id: "", text: ""})
 
     const [fetchMessages] = useFetching(async () => {
-        const response = await MessageService.getAll()
+        const response = await MessageService.getAll(chatId)
         setMessages([...response.data])
     })
 
     useEffect(() => {
         if(isAuth){
+            setMessages([...messages, propsMessages])
             fetchMessages()
         }
     }, [])
@@ -63,4 +61,4 @@ const MessagePage = () => {
             </div>)
 };
 
-export default MessagePage;
+export default MessageBlock;

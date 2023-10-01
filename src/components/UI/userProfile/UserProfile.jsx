@@ -12,7 +12,7 @@ const UserProfile = ({user}) => {
     const chatId = [user.id, principal.id].sort().join('-')
 
     function onClickHandler(){
-        navigate(`/messages/${chatId}`)
+        navigate(`/chats/${chatId}`)
     }
 
     return (

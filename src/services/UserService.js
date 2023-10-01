@@ -1,4 +1,4 @@
-import { ACCESS_TOKEN, API_BASE_URL } from "../constants";
+import {ACCESS_TOKEN, API_BASE_URL} from "../constants";
 import $api from "../http";
 
 export default class UserService{
@@ -11,13 +11,11 @@ export default class UserService{
     }
 
     static async getAll(){
-        const response = await $api.get(API_BASE_URL + '/users')
-        return response
+        return await $api.get(API_BASE_URL + '/users')
     }
 
     static async getById(id){
-        const response = await $api.get(API_BASE_URL + '/users/' + id)
-        return response
+        return await $api.get(API_BASE_URL + '/users/' + id)
     }
 
 }
