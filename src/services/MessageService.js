@@ -12,11 +12,12 @@ export default class MessageService{
     }
 
     static async postMessage(chatId, inputMessage){
-        return await $api.post(API_BASE_URL + `/chats/${chatId}/messages`, inputMessage)
+        return await $api.post(API_BASE_URL + `/chats/${chatId}/messages/${inputMessage.id}`, inputMessage)
     }
 
     static async putMessage(chatId, inputMessage){
-        return await $api.put(API_BASE_URL + `/chats/${chatId}/messages/` + inputMessage.id, inputMessage)
+        console.log(inputMessage)
+        return await $api.put(API_BASE_URL + `/chats/${chatId}/messages/${inputMessage.id}`, inputMessage)
     }
 
     static async deleteById(chatId, messageId){

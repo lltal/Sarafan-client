@@ -3,13 +3,13 @@ import './MessageBlock.css'
 import useFetching from "../../../hooks/useFetching";
 import MessageService from "../../../services/MessageService";
 
-const MessageList = ({inputMessage, setInputMessage, messages, setMessages, getIndex}) => {
+const MessageList = ({inputMessage, setInputMessage, messages, setMessages, getIndex, chatId}) => {
 
     const [deleteMessage] = useFetching(async (message) => {
         let index = getIndex(message)
         messages.splice(index, 1)
         setMessages([...messages])
-        await MessageService.deleteById(message.id)
+        await MessageService.deleteById(chatId, message.id)
         if (message.id === inputMessage.id) {
             inputMessage.id = ""
         }

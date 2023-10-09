@@ -1,11 +1,13 @@
 import './MessageForm.css'
-import useFetching from "../../../hooks/useFetching";
-import MessageService from "../../../services/MessageService";
+import useFetching from "../../../../hooks/useFetching";
+import MessageService from "../../../../services/MessageService";
+import {useSelector} from "react-redux";
 
-const MessageForm = ({inputMessage, setInputMessage, messages, setMessages, getIndex}) => {
+const MessageForm = ({inputMessage, setInputMessage, messages, setMessages, getIndex, chatId}) => {
 
     const [postMessage] = useFetching(async (message) => {
-        let response = await MessageService.postMessage(message)
+        console.log()
+        let response = await MessageService.postMessage(chatId, message)
         setMessages([...messages, response.data])
     })
 
@@ -13,17 +15,22 @@ const MessageForm = ({inputMessage, setInputMessage, messages, setMessages, getI
         let index = getIndex(inputMessage)
         messages.splice(index, 1, inputMessage)
         setMessages([...messages])
-        await MessageService.putMessage(message)
+        await MessageService.putMessage(chatId, message)
     })
 
     function saveMessage (e) {
         e.preventDefault()
         if(inputMessage.id){
-            putMessage({inputMessage})
+            putMessage(inputMessage)
         } else {
-            postMessage({inputMessage})
+            postMessage(inputMessage)
         }
-        setInputMessage({id: "", text: ""})
+        setInputMessage({
+            id: "",
+            text: "",
+            creationDate: "",
+            userId: ""
+        })
     }
 
     return (
@@ -32,7 +39,7 @@ const MessageForm = ({inputMessage, setInputMessage, messages, setMessages, getI
                 type="text"
                 placeholder="Write something"
                 value={inputMessage.text}
-                onChange={(e) => setInputMessage({id: inputMessage.id, text: e.target.value})}
+                onChange={(e) => setInputMessage({...inputMessage, text: e.target.value})}
             />
             <button
                 onClick={saveMessage}

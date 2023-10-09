@@ -5,12 +5,12 @@ import useFetching from "../hooks/useFetching";
 import ChatService from "../services/ChatService";
 import {HttpStatusCode} from "axios";
 import MessageBlock from "../components/UI/messages/MessageBlock";
-import SockJS from 'sockjs-client';
-import Stomp from 'stompjs';
+import {connect} from "../ws";
+
 
 const ChatPage = () => {
 
-    const [chat, setChat] = useState({})
+    const [chat, setChat] = useState({id: "", messages: []})
 
     const params = useParams()
     const isAuth = useSelector(select => select.auth.isAuth)
@@ -18,14 +18,14 @@ const ChatPage = () => {
     const [fetchChat] = useFetching( () => {
         ChatService.getById(params.chatId)
             .then(response => {
-                setChat({...response.data});
+                setChat({...chat, ...response.data});
             })
             .catch(error => {
                 const responseStatus = error.response.data.status
                 if (responseStatus === HttpStatusCode.NotFound){
                     ChatService.postChat( {id: params.chatId, messages: []})
                         .then(response => {
-                            setChat({...response.data})
+                            setChat({...chat, ...response.data})
                         })
                 }
             })
@@ -33,16 +33,18 @@ const ChatPage = () => {
 
     useEffect(() => {
         if (isAuth){
+            connect(params.chatId)
             fetchChat()
-            const socket = SockJS()
         }
     }, [])
 
     return (
         <div className="chat__page">
             <div>{chat.id}</div>
-            {console.log(chat)}
-            <MessageBlock messages={chat.messages} chatId={params.chatId}/>
+            <MessageBlock
+                chatId={params.chatId}
+                chat={chat}
+            />
         </div>
     );
 };

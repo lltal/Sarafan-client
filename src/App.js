@@ -14,46 +14,47 @@ import RightColumn from "./components/UI/rightColumn/RightColumn";
 
 function App() {
 
-  const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
-  useEffect(() => {
-    loadCurrentlyLoggedUser()
-  })
-
-  function handleLogout() {
-    localStorage.removeItem(ACCESS_TOKEN)
-    dispatch(logout())
-    dispatch(logoutUser())
-}
-
-  function loadCurrentlyLoggedUser () {
-    UserService.getCurrentUser()
-    .then(response => {
-      const user = {...response.data}
-      dispatch(loginUser({
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        imageUrl: user.imageUrl }))
-      dispatch(login())
-    }).catch(error => {
-      dispatch(logout())
+    useEffect(() => {
+        loadCurrentlyLoggedUser()
     })
-  }
 
-  return (
-  <div className="app">
-    <Provider store={store}>
-      <Navbar logout={handleLogout}/>
-      <div className="app__body">
-        <LeftColumn/>
-        <div className="app__center__column">
-          <AppRouter/>
-        </div>
-        <RightColumn/>
-      </div>
-    </Provider>
-  </div>);
+    function handleLogout() {
+        localStorage.removeItem(ACCESS_TOKEN)
+        dispatch(logout())
+        dispatch(logoutUser())
+    }
+
+    function loadCurrentlyLoggedUser () {
+        UserService.getCurrentUser()
+            .then(response => {
+                const user = {...response.data}
+                dispatch(loginUser({
+                    id: user.id,
+                    name: user.name,
+                    email: user.email,
+                    imageUrl: user.imageUrl }))
+                dispatch(login())
+            })
+            .catch(error => {
+                dispatch(logout())
+            })
+    }
+
+    return (
+        <div className="app">
+            <Provider store={store}>
+                <Navbar logout={handleLogout}/>
+                <div className="app__body">
+                    <LeftColumn/>
+                    <div className="app__center__column">
+                        <AppRouter/>
+                    </div>
+                    <RightColumn/>
+                </div>
+            </Provider>
+        </div>);
 }
 
 export default App;
