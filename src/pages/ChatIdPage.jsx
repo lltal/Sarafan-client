@@ -5,7 +5,7 @@ import useFetching from "../hooks/useFetching";
 import ChatService from "../services/ChatService";
 import {HttpStatusCode} from "axios";
 import MessageBlock from "../components/UI/messages/MessageBlock";
-import {connect} from "../ws";
+import {addHandler, connect} from "../ws";
 
 
 const ChatPage = () => {
@@ -34,6 +34,7 @@ const ChatPage = () => {
     useEffect(() => {
         if (isAuth){
             connect(params.chatId)
+            addHandler((data) => {console.log(data)})
             fetchChat()
         }
     }, [])

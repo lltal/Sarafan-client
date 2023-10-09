@@ -1,12 +1,10 @@
 import './MessageForm.css'
 import useFetching from "../../../../hooks/useFetching";
 import MessageService from "../../../../services/MessageService";
-import {useSelector} from "react-redux";
 
 const MessageForm = ({inputMessage, setInputMessage, messages, setMessages, getIndex, chatId}) => {
 
     const [postMessage] = useFetching(async (message) => {
-        console.log()
         let response = await MessageService.postMessage(chatId, message)
         setMessages([...messages, response.data])
     })

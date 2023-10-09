@@ -11,6 +11,7 @@ export function connect(chatId) {
 
     stompClient.connect({"chatId": chatId}, frame => {
         stompClient.subscribe('/topic/private', message => {
+            console.log(message)
             handlers.forEach(handler => handler(message))
         })
     })
