@@ -30,9 +30,6 @@ const MessageBlock = ({chatId, chat}) => {
             if (chat != null){
                 setMessages([...messages, ...chat.messages])
             }
-            addHandler((data) => {
-                //console.log(data)
-            })
             fetchMessages()
         }
     }, [chat])

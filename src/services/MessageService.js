@@ -16,7 +16,6 @@ export default class MessageService{
     }
 
     static async putMessage(chatId, inputMessage){
-        console.log(inputMessage)
         return await $api.put(API_BASE_URL + `/chats/${chatId}/messages/${inputMessage.id}`, inputMessage)
     }
 
