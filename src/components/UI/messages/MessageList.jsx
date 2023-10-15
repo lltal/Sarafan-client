@@ -1,15 +1,20 @@
 import MessageItem from './MessageItem'
-import './MessageBlock.css'
+import './MessageBlock.module.css'
 import useFetching from "../../../hooks/useFetching";
 import MessageService from "../../../services/MessageService";
+import {useDispatch, useSelector} from "react-redux";
+import {setChat} from "../../../store/chatReducer";
 
-const MessageList = ({inputMessage, setInputMessage, messages, setMessages, getIndex, chatId}) => {
+const MessageList = ({inputMessage, setInputMessage}) => {
+
+    const chat = useSelector(select => select.chat)
+    const dispatch = useDispatch()
 
     const [deleteMessage] = useFetching(async (message) => {
-        let index = getIndex(message)
-        messages.splice(index, 1)
-        setMessages([...messages])
-        await MessageService.deleteById(chatId, message.id)
+        let index = chat.messages.findIndex(m => m.id === message.id)
+        chat.messages.splice(index, 1)
+        dispatch(setChat({...chat, messages: [...chat.messages]}))
+        await MessageService.deleteById(chat.id, message.id)
         if (message.id === inputMessage.id) {
             inputMessage.id = ""
         }
@@ -21,7 +26,7 @@ const MessageList = ({inputMessage, setInputMessage, messages, setMessages, getI
 
     return (
         <div className="messages">
-            {messages.map((message, index) =>
+            {chat.messages.map((message, index) =>
                 <MessageItem
                     key={message.id} 
                     message={message}

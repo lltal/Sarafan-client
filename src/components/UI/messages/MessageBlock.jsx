@@ -3,16 +3,17 @@ import MessageService from "../../../services/MessageService";
 import useFetching from "../../../hooks/useFetching";
 import MessageList from './MessageList';
 import MessageForm from './creationForm/MessageForm'
-import './MessageBlock.css'
-import {useSelector} from "react-redux";
-import {useParams} from "react-router-dom";
-import {addHandler} from "../../../ws";
+import './MessageBlock.module.css'
+import {useDispatch, useSelector} from "react-redux";
+import {setChat} from "../../../store/chatReducer";
 
-const MessageBlock = ({chatId, chat}) => {
+const MessageBlock = () => {
 
     const isAuth = useSelector(state => state.auth.isAuth)
+    const chat = useSelector(select => select.chat)
 
-    const [messages, setMessages] = useState([])
+    const dispatch = useDispatch()
+
     const [inputMessage, setInputMessage] = useState({
         id: "",
         text: "",
@@ -21,28 +22,15 @@ const MessageBlock = ({chatId, chat}) => {
     })
 
     const [fetchMessages] = useFetching(async () => {
-        const response = await MessageService.getAll(chatId)
-        setMessages([...response.data])
+        const response = await MessageService.getAll(chat.id)
+        dispatch(setChat({...chat, messages: [...response.data]}))
     })
 
     useEffect(() => {
-        if(isAuth){
-            if (chat != null){
-                setMessages([...messages, ...chat.messages])
-            }
+        if(isAuth && chat.id){
             fetchMessages()
         }
-    }, [chat])
-
-    function getIndex(message){
-        for (let i = 0; i < messages.length; i++) {
-            if (messages[i].id === message.id){
-                return i
-            }
-        }
-
-        return -1
-    }
+    }, [chat.id])
     
     return (<div>
                 {isAuth
@@ -51,18 +39,10 @@ const MessageBlock = ({chatId, chat}) => {
                         <MessageForm
                             inputMessage={inputMessage}
                             setInputMessage={setInputMessage}
-                            messages={messages}
-                            setMessages={setMessages}
-                            chatId={chatId}
-                            getIndex={getIndex}
                         />
                         <MessageList
                             inputMessage={inputMessage}
                             setInputMessage={setInputMessage}
-                            messages={messages}
-                            setMessages={setMessages}
-                            getIndex={getIndex}
-                            chatId={chatId}
                         />
                     </div>
                     :

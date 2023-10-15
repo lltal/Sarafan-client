@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c24eb3-ad3b-4186-a078-d489b3fb6478" name="Changes" comment="" />
+    <list default="true" id="46c24eb3-ad3b-4186-a078-d489b3fb6478" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/store/chatReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/messages/creationForm/MessageForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/creationForm/MessageForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ChatIdPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ChatIdPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/userReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ws/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ws/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +28,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2WhwzLS1x187x212Hkuu9Xd5dfV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,6 +45,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -40,6 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1697198381680</updated>
       <workItem from="1697198383653" duration="10000" />
+      <workItem from="1697262914681" duration="17551000" />
     </task>
     <servers />
   </component>

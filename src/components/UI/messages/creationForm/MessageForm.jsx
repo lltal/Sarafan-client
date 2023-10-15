@@ -1,19 +1,23 @@
 import './MessageForm.css'
 import useFetching from "../../../../hooks/useFetching";
 import MessageService from "../../../../services/MessageService";
+import {useDispatch, useSelector} from "react-redux";
+import {setChat} from "../../../../store/chatReducer";
 
-const MessageForm = ({inputMessage, setInputMessage, messages, setMessages, getIndex, chatId}) => {
+const MessageForm = ({inputMessage, setInputMessage}) => {
+
+    const chat = useSelector(select => select.chat)
+    const dispatch = useDispatch()
 
     const [postMessage] = useFetching(async (message) => {
-        let response = await MessageService.postMessage(chatId, message)
-        setMessages([...messages, response.data])
+        let response = await MessageService.postMessage(chat.id, message)
+        dispatch(setChat({...chat, messages: [...chat.messages, response.data]}))
     })
 
     const [putMessage] = useFetching(async (message) => {
-        let index = getIndex(inputMessage)
-        messages.splice(index, 1, inputMessage)
-        setMessages([...messages])
-        await MessageService.putMessage(chatId, message)
+        let index = chat.messages.findIndex(m => m.id === message.id)
+        chat.messages.splice(index, 1, message)
+        await MessageService.putMessage(chat.id, message)
     })
 
     function saveMessage (e) {

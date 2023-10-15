@@ -8,8 +8,8 @@ export function connect(chatId) {
     const socket = new SockJS('http://localhost:15000/guide-ws')
     stompClient = Stomp.over(socket)
 
-    stompClient.connect({"chatId": chatId}, frame => {
-        stompClient.subscribe('/topic/private-messages', message => {
+    stompClient.connect({}, frame => {
+        stompClient.subscribe(`/user/${chatId}/private-messages`, message => {
             handlers.forEach(handler => handler(JSON.parse(message.body)))
         })
     })

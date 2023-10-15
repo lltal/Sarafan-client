@@ -16,7 +16,7 @@ const userReducer = (state = defaultState, action) => {
                 id: action.payload.id,
                 name: action.payload.name,
                 email: action.payload.email,
-                imageUrl: action.payload.imageUrl,
+                imageUrl: action.payload.imageUrl
             }
         }
         case LOGOUT_USER: {
