@@ -2,7 +2,7 @@ import './MessageForm.css'
 import useFetching from "../../../../hooks/useFetching";
 import MessageService from "../../../../services/MessageService";
 import {useDispatch, useSelector} from "react-redux";
-import {setChat} from "../../../../store/chatReducer";
+import {setChat, setChatMessages} from "../../../../store/chatReducer";
 
 const MessageForm = ({inputMessage, setInputMessage}) => {
 
@@ -11,12 +11,13 @@ const MessageForm = ({inputMessage, setInputMessage}) => {
 
     const [postMessage] = useFetching(async (message) => {
         let response = await MessageService.postMessage(chat.id, message)
-        dispatch(setChat({...chat, messages: [...chat.messages, response.data]}))
+        dispatch(setChatMessages({messages: [...chat.messages, response.data]}))
     })
 
     const [putMessage] = useFetching(async (message) => {
         let index = chat.messages.findIndex(m => m.id === message.id)
         chat.messages.splice(index, 1, message)
+        dispatch(setChatMessages({messages: [...chat.messages]}))
         await MessageService.putMessage(chat.id, message)
     })
 

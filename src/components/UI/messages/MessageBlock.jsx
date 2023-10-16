@@ -25,12 +25,6 @@ const MessageBlock = () => {
         const response = await MessageService.getAll(chat.id)
         dispatch(setChat({...chat, messages: [...response.data]}))
     })
-
-    useEffect(() => {
-        if(isAuth && chat.id){
-            fetchMessages()
-        }
-    }, [chat.id])
     
     return (<div>
                 {isAuth

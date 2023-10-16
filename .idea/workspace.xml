@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c24eb3-ad3b-4186-a078-d489b3fb6478" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/store/chatReducer.js" afterDir="false" />
+    <list default="true" id="46c24eb3-ad3b-4186-a078-d489b3fb6478" name="Changes" comment="websocket session">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/messages/creationForm/MessageForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/creationForm/MessageForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ChatIdPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ChatIdPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/userReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ws/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ws/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/chatReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/chatReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +59,24 @@
       <option name="presentableId" value="Default" />
       <updated>1697198381680</updated>
       <workItem from="1697198383653" duration="10000" />
-      <workItem from="1697262914681" duration="17551000" />
+      <workItem from="1697262914681" duration="25261000" />
     </task>
+    <task id="LOCAL-00001" summary="websocket session">
+      <option name="closed" value="true" />
+      <created>1697352404468</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697352404468</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="websocket session" />
+    <option name="LAST_COMMIT_MESSAGE" value="websocket session" />
   </component>
 </project>

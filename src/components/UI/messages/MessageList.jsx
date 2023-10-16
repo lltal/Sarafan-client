@@ -3,7 +3,7 @@ import './MessageBlock.module.css'
 import useFetching from "../../../hooks/useFetching";
 import MessageService from "../../../services/MessageService";
 import {useDispatch, useSelector} from "react-redux";
-import {setChat} from "../../../store/chatReducer";
+import {setChatMessages} from "../../../store/chatReducer";
 
 const MessageList = ({inputMessage, setInputMessage}) => {
 
@@ -13,7 +13,7 @@ const MessageList = ({inputMessage, setInputMessage}) => {
     const [deleteMessage] = useFetching(async (message) => {
         let index = chat.messages.findIndex(m => m.id === message.id)
         chat.messages.splice(index, 1)
-        dispatch(setChat({...chat, messages: [...chat.messages]}))
+        dispatch(setChatMessages({messages: [...chat.messages]}))
         await MessageService.deleteById(chat.id, message.id)
         if (message.id === inputMessage.id) {
             inputMessage.id = ""
