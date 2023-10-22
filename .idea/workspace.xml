@@ -4,13 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c24eb3-ad3b-4186-a078-d489b3fb6478" name="Changes" comment="websocket session">
+    <list default="true" id="46c24eb3-ad3b-4186-a078-d489b3fb6478" name="Changes" comment="refactor">
+      <change afterPath="$PROJECT_DIR$/src/components/UI/chats/ChatItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/chats/ChatList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ChatsPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/chatInfoReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/leftColumn/LeftColumn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/leftColumn/LeftColumn.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/MessageBlock.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/messages/creationForm/MessageForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/messages/creationForm/MessageForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/users/UserItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/users/UserList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ChatIdPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ChatIdPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/UserIdPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UserIdPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/UsersPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UsersPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ChatService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ChatService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/chatReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/chatReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/ChatPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ChatPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ws/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ws/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,22 +48,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\react+spring\i\sarafan\sarafan-client\src\components\UI\users" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,7 +78,10 @@
       <option name="presentableId" value="Default" />
       <updated>1697198381680</updated>
       <workItem from="1697198383653" duration="10000" />
-      <workItem from="1697262914681" duration="25261000" />
+      <workItem from="1697262914681" duration="40198000" />
+      <workItem from="1697573881791" duration="6447000" />
+      <workItem from="1697881929641" duration="1038000" />
+      <workItem from="1697983475088" duration="4743000" />
     </task>
     <task id="LOCAL-00001" summary="websocket session">
       <option name="closed" value="true" />
@@ -69,7 +91,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697352404468</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1697438013066</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697438013066</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,6 +107,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="websocket session" />
-    <option name="LAST_COMMIT_MESSAGE" value="websocket session" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
 </project>

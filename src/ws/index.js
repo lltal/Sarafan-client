@@ -1,5 +1,5 @@
 import SockJS from "sockjs-client";
-import { Stomp } from '@stomp/stompjs'
+import {Stomp} from '@stomp/stompjs'
 
 var stompClient = null
 var handlers = []
@@ -14,6 +14,7 @@ export function connect(chatId) {
         })
     })
 }
+
 
 export function addHandler(handler) {
     handlers.push(handler)

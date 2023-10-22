@@ -13,7 +13,7 @@ const LeftColumn = () => {
                 ?
                 <div>
                     <div style={{padding: 10}}>
-                        <NavLink className="messages__link" to="/messages">Messages</NavLink>
+                        <NavLink className="messages__link" to="/chats">Messages</NavLink>
                     </div>
                     <div style={{padding: 10}}>
                         <NavLink className="users__link" to="/users">Search</NavLink>

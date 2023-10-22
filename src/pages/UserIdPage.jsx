@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import UserService from "../services/UserService";
 import useFetching from "../hooks/useFetching";
-import UserItem from "../components/UserItem";
+import UserItem from "../components/UI/users/UserItem";
 import UserProfile from "../components/UI/userProfile/UserProfile";
 
 const UserIdPage = () => {

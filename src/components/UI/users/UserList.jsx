@@ -1,5 +1,5 @@
 import UserItem from './UserItem'
-import '../styles/UserPage.css'
+import '../../../styles/UserPage.css'
 
 const UserList = ({users}) => {
 

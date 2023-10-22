@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import useFetching from "../hooks/useFetching"
 import UserService from "../services/UserService"
 import { useSelector } from "react-redux"
-import UserList from "../components/UserList"
+import UserList from "../components/UI/users/UserList"
 import '../styles/UserPage.css'
 
 const UsersPage = () => {

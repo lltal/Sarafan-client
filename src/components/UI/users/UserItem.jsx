@@ -1,7 +1,7 @@
-import googleLogo from '../img/google-logo.png'
-import '../styles/UserPage.css'
+import googleLogo from '../../../img/google-logo.png'
+import '../../../styles/UserPage.css'
 import {Navigate, useNavigate} from "react-router-dom";
-import MyButton from "./UI/MyButtom/MyButton";
+import MyButton from "../MyButtom/MyButton";
 
 const UserItem = ({user}) => {
 

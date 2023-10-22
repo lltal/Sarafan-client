@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import MessageService from "../../../services/MessageService";
 import useFetching from "../../../hooks/useFetching";
 import MessageList from './MessageList';
 import MessageForm from './creationForm/MessageForm'
-import './MessageBlock.module.css'
+import classes from './MessageBlock.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {setChat} from "../../../store/chatReducer";
 
@@ -29,7 +29,7 @@ const MessageBlock = () => {
     return (<div>
                 {isAuth
                     ?
-                    <div className="messages__page">
+                    <div className={classes.messages__block}>
                         <MessageForm
                             inputMessage={inputMessage}
                             setInputMessage={setInputMessage}
